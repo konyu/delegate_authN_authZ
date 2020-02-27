@@ -13,5 +13,8 @@ Rails.application.routes.draw do
     get 'reset_password', to: 'users/passwords#edit'
   end
 
+  # TODO format指定
+  resources :users, only: [:show]
+
   root to: 'application#home'
 end
