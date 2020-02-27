@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, except: :show
   
   def show
-    render json: User.where(params[:id]).first
+    if user = User.where(id: params[:id]).first
+      render json: user
+    else
+      head :not_found
+    end 
   end
 end

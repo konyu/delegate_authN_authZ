@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 # TODO ダミーのDBを用意できないか
-class User < ApplicationRecord
-  # attr_accessor :id, :email, :created_at, :updated_at, :provider, :uid
+class User# < ApplicationRecord
+  include ActiveModel::Model
+  attr_accessor :id, :email, :created_at, :updated_at, :provider, :uid
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:github]
+  # devise :database_authenticatable, :registerable,
+  #        :recoverable, :rememberable, :validatable,
+  #        :omniauthable, omniauth_providers: [:github]
 
   # def self.from_omniauth(auth)
   #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
