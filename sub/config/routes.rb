@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   # end
 
   root to: 'application#home'
+  get '/:id/edit', to: 'application#edit'
 end

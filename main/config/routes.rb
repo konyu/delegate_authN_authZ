@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   # TODO format指定
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit]
 
   root to: 'application#home'
 end
